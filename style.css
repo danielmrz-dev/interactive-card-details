@@ -1,0 +1,299 @@
+body {
+  background: url("images/bg-main-mobile.png") center top no-repeat;
+  background-size: contain;
+  font-family: "Space Grotesk", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 550px) {
+  body {
+    justify-content: center;
+    align-items: center;
+  }
+}
+body .cards {
+  padding: 2rem 1.25rem;
+  max-width: 550px;
+}
+body .cards__empty-alert {
+  color: #ff5252;
+  font-size: 0.75rem;
+  padding-left: 0.3rem;
+  text-transform: none;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+body .cards .active-error {
+  opacity: 1;
+}
+body .cards__front-back {
+  display: flex;
+  flex-direction: column;
+}
+body .cards__front {
+  max-width: 80%;
+  order: 1;
+  position: relative;
+  transform: translateY(-66px);
+  margin-bottom: -30px;
+}
+body .cards__front-circles {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 18px;
+  left: 18px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+body .cards__front-circles::after {
+  content: "";
+  display: block;
+  height: 15px;
+  width: 15px;
+  transform: translate(40px, 8px);
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+body .cards__front-information {
+  position: absolute;
+  bottom: 0;
+  color: #dedddf;
+  padding: 1.25rem;
+}
+body .cards__front-number {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  padding: 0.75rem 0;
+}
+body .cards__name-and-expdate {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+body .cards__back {
+  max-width: 80%;
+  align-self: flex-end;
+  position: relative;
+}
+body .cards__back-number {
+  position: absolute;
+  top: 44%;
+  right: 12%;
+  color: #dedddf;
+  font-size: clamp(0.6rem, 2.5vw, 1.1rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+body .cards__form {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+body .cards .active-error-input {
+  border: 1px solid #ff5252;
+}
+body .cards input {
+  border: 1px solid #dedddf;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  margin: 0.2rem 0 0 0;
+}
+body .cards input::-moz-placeholder {
+  font-weight: 600;
+  opacity: 0.6;
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+}
+body .cards input::placeholder {
+  font-weight: 600;
+  opacity: 0.6;
+  padding-left: 0.5rem;
+  font-size: 1.1rem;
+}
+body .cards input::-webkit-outer-spin-button,
+body .cards input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body .cards input[type=number] {
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  -moz-appearance: textfield;
+}
+body .cards__label-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #21092f;
+  letter-spacing: 2px;
+}
+body .cards__expdate-and-cvv {
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 0.37rem));
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+body .cards__exp-date-label {
+  grid-area: 1/1/2/3;
+}
+body .cards #exp-date-month {
+  grid-area: 2/1/3/2;
+}
+body .cards #exp-date-year {
+  grid-area: 2/2;
+}
+body .cards #cvv {
+  grid-area: 2/3/3/5;
+}
+body .cards #empty-month {
+  grid-area: 3/1/4/3;
+}
+body .cards #empty-cvv {
+  grid-area: 3/3/4/5;
+}
+body .cards__button {
+  background-color: #21092f;
+  color: #dedddf;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+body .cards__thank-you {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+body .cards__thank-you img {
+  width: 70px;
+}
+body .cards__ty {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+body .cards__details-added {
+  color: #8e8593;
+  font-weight: 600;
+}
+body .cards__continue {
+  background-color: #21092f;
+  color: #ffffff;
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background: url("images/bg-main-desktop.png") center left no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+  }
+  body .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+    max-width: 1200px;
+  }
+  body .cards__front-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+  body .cards__front {
+    min-width: 440px;
+    order: 0;
+    position: relative;
+    transform: translate(-45px, 0);
+    margin-bottom: 0;
+  }
+  body .cards__front-number {
+    letter-spacing: 3px;
+  }
+  body .cards__back {
+    min-width: 440px;
+    transform: translate(45px, 0);
+  }
+  body .cards__front-circles {
+    height: 50px;
+    width: 50px;
+    top: 30px;
+    left: 30px;
+  }
+  body .cards__front-circles::after {
+    height: 22px;
+    width: 22px;
+    transform: translate(65px, 14px);
+  }
+  body .cards__front-information {
+    padding: 2rem;
+  }
+  body .cards__front-number {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+  body .cards__name-and-expdate {
+    font-size: 1rem;
+  }
+  body .cards__back-number {
+    top: 43%;
+  }
+  body .cards__form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-transform: uppercase;
+  }
+  body .cards input {
+    padding: 0.75rem;
+    margin: 0.2rem 0 0 0;
+  }
+  body .cards input::-moz-placeholder {
+    font-weight: 400;
+    opacity: 0.6;
+    padding-left: 0.5rem;
+    font-size: 1.25rem;
+  }
+  body .cards input::placeholder {
+    font-weight: 400;
+    opacity: 0.6;
+    padding-left: 0.5rem;
+    font-size: 1.25rem;
+  }
+  body .cards__label-text {
+    font-size: 0.8rem;
+  }
+  body .cards__button {
+    font-size: 1.25rem;
+  }
+  body .cards__thank-you {
+    width: 100%;
+    gap: 2rem;
+  }
+  body .cards__ty {
+    font-size: 1.75rem;
+  }
+  body .cards__details-added {
+    font-size: 1.25rem;
+  }
+  body .cards__continue {
+    padding: 1rem 9rem;
+    margin: 1rem 0;
+  }
+}/*# sourceMappingURL=style.css.map */

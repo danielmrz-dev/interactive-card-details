@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Credit Card Form">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="index.js" defer></script>
+
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+
+  <main class="cards">
+
+    <section class="cards__front-back w-full">
+
+      <div class="cards__front shadow-2xl">
+        <span class="cards__front-circles"></span>
+        <img src="images/bg-card-front.png" alt="" class="cards__front-img">
+        <div class="cards__front-information w-full">
+          <h1 class="cards__front-number">0000 0000 0000 0000</h1>
+          <div class="cards__name-and-expdate w-full">
+            <h2 class="cards__name">Jane Appleseed</h2>
+            <span class="cards__exp-date"><span id="MM">00</span>/<span id="YY">00</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards__back md:shadow-2xl">
+        <img src="images/bg-card-back.png" alt="">        
+        <span class="cards__back-number">000</span>
+      </div>
+
+    </section>
+
+    <form class="cards__form">
+      <label for="cardholder-name">
+        <span class="cards__label-text">Cardholder Name</span>
+        <input type="text" name="cardholder-name" class="w-full" id="cardholder-name" placeholder="e.g. Jane Appleseed">
+        <span class="cards__empty-alert" id="empty-cardholder">Can't be empty</span>
+      </label>
+      <label for="card-number">
+        <span class="cards__label-text">Card Number</span>
+        <input type="text" name="card-number" class="w-full" id="card-number" placeholder="e.g. 1234 5678 9123 0000" minlength="19" maxlength="19">
+        <span class="cards__empty-alert" id="empty-card-number">You need to type all the 16 numbers</span>
+      </label>
+      
+      <div class="cards__expdate-and-cvv">
+        <label for="exp-date" class="cards__exp-date-label">
+          <span class="cards__label-text">Exp. Date (MM/YY)</span>
+        </label>
+        <label for="" class="cards__cvv-label w-full">
+          <span class="cards__label-text">CVC</span>
+        </label>
+        <input type="number" name="exp-date-month" id="exp-date-month" placeholder="MM" class="" min="1" max="12">
+        <input type="number" name="exp-date-year" id="exp-date-year" placeholder="YY" class="" min="24" max="99">
+        <input type="number" name="cvv" id="cvv" placeholder="e.g. 123" class="">
+        <span class="cards__empty-alert pt-[.1rem]" id="empty-month">Can't be blank</span>
+        <span class="cards__empty-alert pt-[.1rem]" id="empty-cvv">Can't be blank</span>
+      </div>
+
+      <button class="cards__button block">Confirm</button>
+    </form>
+    
+    <div class="cards__thank-you">
+      <img src="images/icon-complete.svg" alt="icon-complete">
+      <div class="cards__ty-and-details grid gap-2">
+        <h2 class="cards__ty">Thank you!</h2>
+        <p class="cards__details-added">We've added your card details</p>
+      </div>
+      <a href="index.html" class="w-full"><button class="cards__continue">Continue</button></a>
+    </div>
+  </main>
+  
+  <div class="attribution hidden">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
